@@ -16,10 +16,6 @@ app.use('/auth/', userRouter);
 app.use('/data/', displayRouter);
 app.use('/order/', orderRouter);
 
-app.get('/getUrl', (req, res) => {
-  res.send(process.env.BASE_URL);
-});
-
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log(`Server is running on port ${process.env.PORT}...`);
 });
